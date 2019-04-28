@@ -1,10 +1,10 @@
 import React from 'react';
 import { renderRoutes } from 'react-router-config'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 import routes from './routes/config'
+import { withRouter } from 'react-router-dom';
+
 import LeftMenu from './views/leftMenu/index'
 import './App.css'
-
 import { Layout, Menu, Icon } from 'antd';
 
 const { Content, Header, Footer } = Layout;
@@ -23,12 +23,17 @@ class App extends  React.Component {
     componentWillMount() {
         console.log('componentWillMount')
     }
+    // 设置点击
     handleClick(e) {
+        console.log(this.props)
         console.log(e);
+        if (e.key === 'loginOut') {
+            this.props.history.push('/login')
+        }
     }
     render() {
         return (
-            <Router>
+            <div className="app_content">
                 <Layout style={{minHeight: '100vh'}}>
                     {/*左变导航栏*/}
                     <LeftMenu></LeftMenu>
@@ -41,12 +46,12 @@ class App extends  React.Component {
                                     selectedKeys={[this.state.current]}
                                     mode="horizontal"
                                 >
-                                <SubMenu title={<span className="submenu-title-wrapper"><Icon type="setting" />设置</span>}>
-                                    <MenuItemGroup title="操作菜单">
-                                        <Menu.Item key="myInfo">个人信息</Menu.Item>
-                                        <Menu.Item key="loginOut">退出登录</Menu.Item>
-                                    </MenuItemGroup>
-                                </SubMenu>
+                                    <SubMenu title={<span className="submenu-title-wrapper"><Icon type="setting" />设置</span>}>
+                                        <MenuItemGroup title="操作菜单">
+                                            <Menu.Item key="myInfo">个人信息</Menu.Item>
+                                            <Menu.Item key="loginOut">退出登录</Menu.Item>
+                                        </MenuItemGroup>
+                                    </SubMenu>
                                 </Menu>
                             </div>
                         </Header>
@@ -61,7 +66,7 @@ class App extends  React.Component {
                         </Footer>
                     </Layout>
                 </Layout>
-            </Router>
+            </div>
         );
     }
     // 页面加载完
@@ -74,4 +79,4 @@ class App extends  React.Component {
     }
 }
 
-export default App;
+export default (withRouter(App))

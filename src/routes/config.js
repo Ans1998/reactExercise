@@ -5,10 +5,7 @@ import userList from '../views/users/list/index'
 import userAdd from '../views/users/add/index'
 // 订单管理
 import orderList from '../views/oders/list/index'
-// 登录
-import login from '../views/login/index'
-// 注册
-import register from '../views/register/index'
+
 const routes = [
     // 首页
     {
@@ -29,16 +26,6 @@ const routes = [
     {
         path: "/orderList",
         component: orderList
-    },
-    // 登录
-    {
-        path: "/login",
-        component: login
-    },
-    // 注册
-    {
-        path: "/register",
-        component: register
     }
 ]
 export default routes

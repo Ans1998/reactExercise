@@ -1,0 +1,14 @@
+.login_content .login_form {
+    max-width: 300px;
+    position: fixed;
+    top: 25%;
+}
+.login_content .login_form_forgot {
+    float: right;
+}
+.login_content .login_form_register {
+    float: left;
+}
+.login_content .login_form_button {
+    width: 100%;
+}

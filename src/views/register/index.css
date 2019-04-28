@@ -1,0 +1,9 @@
+.register_content .register_form {
+    min-width: 400px;
+    position: fixed;
+    top: 25%;
+}
+
+.register_content .register_form_button {
+    width: 100%;
+}
