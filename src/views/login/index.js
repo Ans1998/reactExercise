@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-    Form, Icon, Input, Button, Checkbox, Row, Col
+    Form, Icon, Input, Button, Checkbox, Row, Col, message
 } from 'antd';
 import './index.css'
 class Login extends  React.Component {
@@ -21,7 +21,23 @@ class Login extends  React.Component {
             if (!err) {
                 console.log(values);
                 // this.props.match.params.xxx
-                this.props.history.push('/')
+                // this.props.history.push('/')
+                if (Boolean(localStorage.getItem('user'))) {
+                    let userData = JSON.parse(localStorage.getItem('user'))
+                    console.log(userData)
+                    if (userData.userName !== values.userName && userData.password !== values.password) {
+                        message.warning('请检查用户名或者密码')
+                        return false
+                    } else {
+                        message.success('登陆成功');
+                        setTimeout(() => {
+                            this.props.history.push('/')
+                        }, 1800)
+                    }
+                } else {
+                    message.warning('请先注册账号');
+                    return false
+                }
             }
         });
     }

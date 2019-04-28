@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Form, Input, Button, Row, Col
+    Form, Input, Button, Row, Col, message
 } from 'antd';
 import './index.css'
 class Register extends  React.Component {
@@ -21,7 +21,12 @@ class Register extends  React.Component {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log(values);
-                this.props.history.push('/login')
+                let user = JSON.stringify(values)
+                localStorage.setItem('user', user)
+                message.success('注册成功');
+                setTimeout(() => {
+                    this.props.history.push('/login')
+                }, 1800)
             }
         });
     }

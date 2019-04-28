@@ -1,16 +1,12 @@
 import React from 'react';
-import { renderRoutes } from 'react-router-config'
-import routes from './routes/config'
-import { withRouter } from 'react-router-dom';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+// 登录
+import login from './views/login/index'
+// 注册
+import register from './views/register/index'
 
-import LeftMenu from './views/leftMenu/index'
+import LayOut from './views/layout/index'
 import './App.css'
-import { Layout, Menu, Icon } from 'antd';
-
-const { Content, Header, Footer } = Layout;
-
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 class App extends  React.Component {
     // 构造函数
@@ -21,52 +17,18 @@ class App extends  React.Component {
     }
     // 挂载函数
     componentWillMount() {
-        console.log('componentWillMount')
-    }
-    // 设置点击
-    handleClick(e) {
         console.log(this.props)
-        console.log(e);
-        if (e.key === 'loginOut') {
-            this.props.history.push('/login')
-        }
+        console.log('componentWillMount')
     }
     render() {
         return (
-            <div className="app_content">
-                <Layout style={{minHeight: '100vh'}}>
-                    {/*左变导航栏*/}
-                    <LeftMenu></LeftMenu>
-                    <Layout>
-                        {/*头部*/}
-                        <Header style={{ background: '#fff', padding: 0}}>
-                            <div className="app_menu_content">
-                                <Menu
-                                    onClick={this.handleClick.bind(this)}
-                                    selectedKeys={[this.state.current]}
-                                    mode="horizontal"
-                                >
-                                    <SubMenu title={<span className="submenu-title-wrapper"><Icon type="setting" />设置</span>}>
-                                        <MenuItemGroup title="操作菜单">
-                                            <Menu.Item key="myInfo">个人信息</Menu.Item>
-                                            <Menu.Item key="loginOut">退出登录</Menu.Item>
-                                        </MenuItemGroup>
-                                    </SubMenu>
-                                </Menu>
-                            </div>
-                        </Header>
-                        {/*内容*/}
-                        <Content style={{margin: '0 16px'}}>
-                            {/*内容路由*/}
-                            {renderRoutes(routes)}
-                        </Content>
-                        {/*底部*/}
-                        <Footer style={{textAlign: 'center'}}>
-                            react练习项目
-                        </Footer>
-                    </Layout>
-                </Layout>
-            </div>
+            <Router>
+                <Switch>
+                    <Route exact path="/login" component={login}></Route>
+                    <Route exact path="/register" component={register}></Route>
+                    <LayOut></LayOut>
+                </Switch>
+            </Router>
         );
     }
     // 页面加载完
@@ -79,4 +41,4 @@ class App extends  React.Component {
     }
 }
 
-export default (withRouter(App))
+export default App;
