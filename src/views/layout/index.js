@@ -4,7 +4,7 @@ import renderRoutes from '../../routes/index' // 路由拦截器
 import routes from '../../routes/config'
 import { withRouter } from 'react-router-dom'
 import LeftMenu from '../leftMenu/index'
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, message } from 'antd';
 
 const authed = false // 如果登陆之后可以利用redux修改该值(关于redux不在我们这篇文章的讨论范围之内）
 const authPath = '/login' // 默认未登录的时候返回的页面，可以自行设置
@@ -29,7 +29,11 @@ class LayOut extends  React.Component  {
         console.log(this.props)
         console.log(e);
         if (e.key === 'loginOut') {
-            this.props.history.push('/login')
+            localStorage.removeItem('user')
+            message.success('退出登录成功');
+            setTimeout(() => {
+                this.props.history.push('/login')
+            }, 1800)
         }
     }
     render() {

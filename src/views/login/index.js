@@ -32,6 +32,7 @@ class Login extends  React.Component {
                         message.success('登陆成功');
                         setTimeout(() => {
                             this.props.history.push('/')
+                            // this.props.history.goBack() // 上一页
                         }, 1800)
                     }
                 } else {
