@@ -10,7 +10,7 @@
 > 4.表格使用(分页加载)
 
 ##### 效果图
-![项目演示](https://github.com/Aliceco/reactExercise/tree/master/public/img/1wnO21GKg4.gif)
+![项目演示](https://github.com/Aliceco/reactExercise/blob/master/public/img/1wnO21GKg4.gif)
 
 ### 使用步骤
 > 安装依赖
