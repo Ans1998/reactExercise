@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.16.5",
+    "axios": "^0.18.0",
     "echarts": "^4.1.0",
     "echarts-gl": "^1.1.1",
     "react": "^16.8.6",

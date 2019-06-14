@@ -54,6 +54,27 @@ class LeftMenu extends  React.Component {
                             <Link to='/orderList'>订单列表</Link>
                         </Menu.Item>
                     </SubMenu>
+                    <SubMenu
+                        key="reptile"
+                        title={<span><Icon type="shopping-cart"/><span>爬虫管理</span></span>}
+                    >
+                        <Menu.Item key="/reptilesSelect">
+                            <Link to='/reptilesSelect'>抓取节点</Link>
+                        </Menu.Item>
+
+                        <SubMenu key="sub3" title="文件列表">
+                            <Menu.Item key="/fileList">
+                                <Link to='/fileList'>抓取文件列表</Link>
+                            </Menu.Item>
+                            <Menu.Item key="/fileCsvList">
+                                <Link to="/fileCsvList">csv文件列表</Link>
+                            </Menu.Item>
+                        </SubMenu>
+
+                        <Menu.Item key="/dataProcessing">
+                            <Link to='/dataProcessing'>数据分析</Link>
+                        </Menu.Item>
+                    </SubMenu>
                 </Menu>
             </Sider>
         );
