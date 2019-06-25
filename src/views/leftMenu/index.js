@@ -56,7 +56,7 @@ class LeftMenu extends  React.Component {
                     </SubMenu>
                     <SubMenu
                         key="reptile"
-                        title={<span><Icon type="shopping-cart"/><span>爬虫管理</span></span>}
+                        title={<span><Icon type="android"/><span>爬虫管理</span></span>}
                     >
                         <Menu.Item key="/reptilesSelect">
                             <Link to='/reptilesSelect'>抓取节点</Link>
@@ -73,6 +73,14 @@ class LeftMenu extends  React.Component {
 
                         <Menu.Item key="/dataProcessing">
                             <Link to='/dataProcessing'>数据分析</Link>
+                        </Menu.Item>
+                    </SubMenu>
+                    <SubMenu
+                        key="drawing"
+                        title={<span><Icon type="fund"/><span>画板管理</span></span>}
+                    >
+                        <Menu.Item key="/drawing">
+                            <Link to='/drawing'>画板功能</Link>
                         </Menu.Item>
                     </SubMenu>
                 </Menu>

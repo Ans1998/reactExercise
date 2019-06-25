@@ -13,6 +13,8 @@ import reptilesSelect from '../views/reptiles/select/index'
 import fileList from '../views/reptiles/fileList/index'
 import fileCsvList from '../views/reptiles/fileCsvList/index'
 import dataProcessing from '../views/reptiles/dataProcessing/index'
+// 画板管理
+import drawing from '../views/drawing/index'
 const routes = [
     // 首页
     {
@@ -61,6 +63,12 @@ const routes = [
         path: "/dataProcessing",
         auth: true,
         component: dataProcessing
+    },
+    // 画板管理
+    {
+        path: '/drawing',
+        auth: true,
+        component: drawing
     },
     // 其他页面
     {

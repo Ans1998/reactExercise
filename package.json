@@ -7,6 +7,7 @@
     "axios": "^0.18.0",
     "echarts": "^4.1.0",
     "echarts-gl": "^1.1.1",
+    "fabric": "^3.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-config": "^5.0.0",

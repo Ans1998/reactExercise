@@ -1,0 +1,13 @@
+.canvas-container {
+    width: 100% !important;
+    min-height: 360px;
+}
+#canvasMain {
+    width: 100% !important;
+    min-height: 360px;
+    background-color: #777777;
+}
+.upper-canvas  {
+    min-height: 360px;
+    width: 100% !important;
+}
