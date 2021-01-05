@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.16.5",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "echarts": "^4.1.0",
     "echarts-gl": "^1.1.1",
     "fabric": "^3.1.0",
